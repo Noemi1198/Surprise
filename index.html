@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Sorpresa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una sorpresa per te</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    padding: 30px;
+}
+
+button {
+    background: #ff4d88;
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#sorpresa {
+    display: none;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:scale(0.8);}
+    to {opacity:1; transform:scale(1);}
+}
+</style>
 </head>
-<body style="text-align:center; font-family:Arial; padding:80px; background:#ffeef5;">
-<h1>🎁 Una sorpresa per te</h1>
-<p>Apri questo messaggio con il cuore</p>
-<h2>Ti amo, guarda la posta ❤️</h2>
+
+<body>
+<div class="container">
+    <div id="inizio">
+        <h1>🎁 Ho qualcosa per te</h1>
+        <p>Clicca qui sotto</p>
+        <button onclick="apriSorpresa()">Apri la sorpresa ❤️</button>
+    </div>
+
+    <div id="sorpresa">
+        <h1>✨ SORPRESA ✨</h1>
+        <h2>Ti amo</h2>
+        <p>Guarda la posta ❤️</p>
+    </div>
+</div>
+
+<script>
+function apriSorpresa() {
+    document.getElementById("inizio").style.display = "none";
+    document.getElementById("sorpresa").style.display = "block";
+}
+</script>
 </body>
 </html>
